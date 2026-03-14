@@ -1,0 +1,13 @@
+[project]
+name = "rag-chatbot-backend"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn==0.30.6",
+    "pypdf==4.3.1",
+    "python-multipart==0.0.9",
+    "sentence-transformers==3.3.1",
+    "faiss-cpu>=1.13.2",
+    "ollama>=0.6.1",
+]

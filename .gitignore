@@ -63,3 +63,7 @@ data/raw/
 # Model cache
 .cache/
 models/
+
+# Claude
+.claude/
+CLAUDE.md
