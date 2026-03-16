@@ -1,5 +1,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import StreamingResponse
+from fastapi.middleware.cors import CORSMiddleware
 from app.parser import extract_text_from_pdf
 from app.chunker import chunk_text
 from app.embedder import embed
@@ -7,6 +8,13 @@ from app.vectorstore import build_index, search
 from app.llm import generate, generate_stream
 
 app = FastAPI(title="RAG Chatbot")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/health")
